@@ -6,3 +6,4 @@ PHP, MySQL kezdő tanfolyam (classic)
 
 * wampserver
 * notepad++
+*
