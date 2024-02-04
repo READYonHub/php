@@ -1,0 +1,6 @@
+<?php
+$a = 500;
+
+print "A(z) {$a} ";
+print ($a % 2 == 0) ? "Paros" : "Paratlan";
+?>
