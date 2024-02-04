@@ -5,8 +5,27 @@
 //@require("kapcsolat.php");//-ha nincs meg a fajl akkor nem jelenit meg semmit
 require("kapcsolat.php"); //biztosítja, hogy a fájl csak egyszer kerüljön beillesztésre, még akkor is, ha többször hivatkoznak rá.
 
+/*
 $sql = "SELECT * FROM nevjegyek 
         ORDER BY nev"; //||DESC csokkeno sorrend || novekvo
+*/
+$kifejezes = "";
+
+//ha letezik (isset) az urlapban atadott ertek akkor ? utan irja ki azt, ha nem akkor ures ertek ""
+$kifejezes = (isset($_POST['kifejezes'])) ? $_POST['kifejezes'] : "";
+//tehat van egy default ertekem hogy ne irjon ki hibat
+
+$sql = "SELECT *
+        FROM nevjegyek
+        WHERE (
+            nev LIKE '%{$kifejezes}%' 
+            OR cegnev LIKE '%{$kifejezes}%' 
+            OR mobil LIKE '%{$kifejezes}%' 
+            OR email LIKE '%{$kifejezes}%' 
+        )
+        ORDER BY nev ASC"; 
+        //||DESC csokkeno sorrend || novekvo
+
 $eredmeny = mysqli_query($dbconn, $sql);
 
 //a fetch azt jelenti, hogy meghatarozhatom, hogy a visszatero adataim az adatbazisbol milyen fajta elrendezesben keszuljenek el
@@ -27,9 +46,9 @@ print_r($sor);
 
 $kimenet = "";
 
-while ($sor = mysqli_fetch_assoc($eredmeny)){
+while ($sor = mysqli_fetch_assoc($eredmeny)) {
 
-$kimenet .= "
+    $kimenet .= "
 <article>
     <h2>{$sor['nev']}</h2>
     <h3>{$sor['cegnev']}</h3>
@@ -39,6 +58,24 @@ $kimenet .= "
 ";
 }
 print_r($sor);
+
+//-----------Urlap
+
+///print_r ($_POST);
+//Array ( )
+//ha beirok valamit a kereso mezobe
+//Array ( [kifejezes] => Hey Bober )
+
+//print $_POST;
+//ha ezt igy lefuttatom akkor : Warning: Array to string conversion
+//mert kezdetben nincs erteke, csak ha az urlapnak van atadott erteke
+//akkor azt enter utan visszaadja
+
+
+
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="hu">
@@ -52,6 +89,19 @@ print_r($sor);
 
 <body>
     <h1>Nevjegykartya</h1>
+     <!--ket fajta method van a post es a get, a post lathatatlanul kuldi az adatokat (a http protokol torzseben helyezkedik el)
+      a get meg nem (latszik az url-ben is es a fejlecben fog atadodni )
+    az action at adja az adott fajnak az adatokat
+    mivel ures az action ujra hivja sajat magat es ujra lefut
+    -->
+
+    <form method="post" action="" >
+        <!--beviteli mezo, a search egy kereso mezo ami egyreszt enterrel aktivalhato
+        masreszt sematinkukan jelzi, hogy ez keresomezo ez a html5-ben jott be
+        azok a bongeszok amik ezt nem ismerik azok text tipusuru butitja vissza es ugyanugy hasznalhato lesz
+    -->
+        <input type="search" id="kifejezes" name="kifejezes">
+    </form>
     <?php print $kimenet; ?>
 </body>
 

@@ -16,4 +16,12 @@ Kesobb szeretnem rendezhetove tenni a megadott adatok alapjan.
 
 uj adatbazis
 kezdo -> utf8_general_ci -> letrehozas
+nev
+cegnev
+mobil
+email
 
+5. kapcsolat.php
+----------------------------------
+
+6. 
