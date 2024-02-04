@@ -1,0 +1,4 @@
+<?php
+ $het_napjai = array("", "hetfo", "kedd", "szerda", "csutortok", "pentek", "szombat", "vasarnap");
+ print data("Y. m. d., ").$het_napjai[date("N"))];
+ ?>
