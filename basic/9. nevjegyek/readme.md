@@ -17,3 +17,8 @@ Kesobb szeretnem rendezhetove tenni a megadott adatok alapjan.
 uj adatbazis
 kezdo -> utf8_general_ci -> letrehozas
 
+id Elsődleges	smallint		UNSIGNED	Nem	Nincs		AUTO_INCREMENT	Módosítás Módosítás	Eldobás Eldobás	
+	2	nev	varchar(64)	utf8mb4_general_ci		Nem	Nincs			Módosítás Módosítás	Eldobás Eldobás	
+	3	vegnev	varchar(64)	utf8mb4_general_ci		Igen	NULL			Módosítás Módosítás	Eldobás Eldobás	
+	4	mobil	varchar(16)	utf8mb4_general_ci		Igen	NULL			Módosítás Módosítás	Eldobás Eldobás	
+	5	email	varchar(64)	utf8mb4_general_ci		Igen	NULL			Módosítás Módosítás	Eldobás Eldobás	
