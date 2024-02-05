@@ -1,0 +1,61 @@
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 14px;
+    background-color: orange;
+}
+
+article {
+    float: left;
+    margin: 20px;
+    width: 300px;
+    border: solid 2px black;
+    background-color: gold;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+article a {
+    color: red;
+    text-decoration: none;
+}
+
+article a:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+tr {
+    color: black;
+    text-decoration: none;
+}
+
+tr:hover td {
+    color: red;
+    text-decoration: underline;
+}
+
+table {
+    margin-top: 20px;
+    border: solid 2px black;
+    border-collapse: collapse;
+}
+
+/*minden páros sorra vonatkozzon:*/
+tr:nth-child(2n) {
+    background-color: white;
+}
+
+/*minden páratlan sorra vonatkozzon:*/
+tr:nth-child(2n+1) {
+    background-color: #eee;
+}
+
+th {
+    background-color: red;
+}
+
+th,
+td {
+    padding: 8px;
+    border: solid 1px black;
+}
