@@ -24,4 +24,8 @@ email
 5. kapcsolat.php
 ----------------------------------
 
-6. 
+6. CRUD
+Create
+Read
+Update
+Delete
