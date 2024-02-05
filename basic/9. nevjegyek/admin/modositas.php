@@ -1,4 +1,5 @@
 <?php
+require("../kapcsolat.php");
 //Űrlap feldolgozása
 //a kitoltott inputokat elkuldes (postolás) után,ha létezik, akkor kiirja
 if (isset($_POST['rendben'])) {
@@ -42,6 +43,8 @@ if (isset($_POST['rendben'])) {
     //a filter_var megvizsgálja az email-t és a php beépített szintaktikai ellenőrzése FILTER_VALIDATE_EMAIL
     if (!empty($email) && !filter_var($email, FILTER_VALIDATE_EMAIL))
         $hibak[] = "Rossz e-mail címet adtál meg!";
+
+
     //Hibaüzenetek összeállítása
     if (isset($hibak)) {
         $kimenet = "<ul>\n";
@@ -50,17 +53,44 @@ if (isset($_POST['rendben'])) {
         }
         $kimenet .= "</ul>\n";
     } else {
-        //adatbazisba betöltés és felvitel
-        require("../kapcsolat.php");
-        $sql = "INSERT INTO nevjegyek
-        (nev, cegnev, mobil, email)
-        VALUES 
-        ('{$nev}', '{$cegnev}', '{$mobil}', '{$email}');";
+
+        //adatbazisba betöltés és módosítás
+        $id = (int)$_POST['id'];
+        $sql = "UPDATE nevjegyek
+                SET nev = '{$nev}',
+                cegnev = '{$cegnev}',
+                mobil = '{$mobil}',
+                email = '{$email}'
+                WHERE id = {$id}
+        ";
         mysqli_query($dbconn, $sql);
+
         header("Location: lista.php");
     }
 }
+//Űrlap előzetes kitöltése
+else {
 
+
+    //ha sima modositas.php-ra keresek ra akkor nem fog mukodni, hibat fog vissza dobni, de ha
+    // modositas.php?id=1 fajl.php?+tulajdonsag=ertek
+    //lekerdezest hajtom végra akkor van vissza terési értékem
+    $id = (int)$_GET['id'];
+
+    $sql = "SELECT *
+            FROM  nevjegyek
+            WHERE id = {$id}
+            ";
+    $eredmeny = mysqli_query($dbconn, $sql);
+    //nincs szükség while ciklusra mert csak egyetlen sorra van szükségem a megjelenitésre amit módosítok
+    $sor = mysqli_fetch_assoc($eredmeny);
+
+    $nev     = $sor['nev'];
+    $cegnev  = $sor['cegnev'];
+    $mobil   = $sor['mobil'];
+    $email   = $sor['email'];
+}
+//Űrlap megjelenítése
 ?>
 <!DOCTYPE html>
 <html lang="hu">
@@ -78,22 +108,23 @@ if (isset($_POST['rendben'])) {
     <!--ha ures az action akkor magat ujrahivja es elorol sorrol sorra ujra ertelmezi a bongeszo-->
     <form method="post" action="">
         <?php if (isset($kimenet)) print $kimenet; ?>
+        <input type="hidden" id="id" name="id" value="<?php print $id; ?>">
         <p>
             <label for="nev">Név*: </label><br>
             <!-- required kötelezően kéri hogy tölsd ki amezőt-->
-            <input type="text" id="nev" name="nev" value="<?php if (isset($nev)) print $nev; ?>">
+            <input type="text" id="nev" name="nev" value="<?php print $nev; ?>">
         </p>
         <p>
             <label for="cegnev">Cégnév: </label><br>
-            <input type="text" id="cegnev" name="cegnev" value="<?php if (isset($cegnev)) print $cegnev; ?>">
+            <input type="text" id="cegnev" name="cegnev" value="<?php print $cegnev; ?>">
         </p>
         <p>
             <label for="mobil">Mobil: </label><br>
-            <input type="tel" id="mobil" name="mobil" value="<?php if (isset($mobil)) print $mobil; ?>">
+            <input type="tel" id="mobil" name="mobil" value="<?php print $mobil; ?>">
         </p>
         <p>
             <label for="email">Email: </label><br>
-            <input type="email" id="email" name="email" value="<?php if (isset($email)) print $email; ?>">
+            <input type="email" id="email" name="email" value="<?php print $email; ?>">
         </p>
         <p><em>A *-gal jelölt mezők kitöltése kötelező!</em></p>
         <input type="submit" id="rendben" name="rendben" value="Rendben">

@@ -23,20 +23,22 @@ $kimenet .= "
             <th>Cégnév</th>
             <th>Mobil</th>
             <th>E-mail</th>
+            <th>Művelet</th>
     </tr>
 ";
 
 //táblázat tartalma
 while ($sor = mysqli_fetch_assoc($eredmeny)) {
 
-    $kimenet .= "<tr>
+    $kimenet .= "\t<tr>
         <td>{$sor['nev']}</td>
         <td>{$sor['cegnev']}</td>
         <td>{$sor['mobil']}</td>
         <td>{$sor['email']}</td>
-    </tr>";
+        <td><a href=\"torles.php?id={$sor['id']}\">Törlés</a> | <a href=\"modositas.php?id={$sor['id']}\">Módosítás</a></td>
+    </tr>\n";
 }
-$kimenet .= "</table>";
+$kimenet .= "</table>\n";
 ?>
 <!DOCTYPE html>
 <html lang="hu">
