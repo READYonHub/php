@@ -63,7 +63,9 @@ $kimenet .= "</table>";
     -->
         <input type="search" id="kifejezes" name="kifejezes">
     </form>
+    <p><a href="felvitel.php">Új névjegy</a></p>
     <?php print $kimenet; ?>
+    <p><a href="felvitel.php">Új névjegy</a></p>
 </body>
 
 </html>

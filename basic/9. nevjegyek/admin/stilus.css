@@ -30,7 +30,7 @@ tr {
 }
 
 tr:hover td {
-    color: red;
+    color: green;
     text-decoration: underline;
 }
 
@@ -58,4 +58,12 @@ th,
 td {
     padding: 8px;
     border: solid 1px black;
+}
+
+a {
+    color: red;
+}
+
+a:hover {
+    color: black;
 }
