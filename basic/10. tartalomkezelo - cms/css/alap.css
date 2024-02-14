@@ -1,0 +1,123 @@
+* {
+    /*tervezésnél segit, átláthatób, ez a * karakter minden eggyes ellemre alkalmaza a megadott paratmétereket*/
+    /* border: dotted 1px #ccc;
+    /*pontozott 1 pixel vastag szurke*/
+    /* margin: 0;
+    font-family: Arial;*/
+}
+
+body {
+    background-color: #ccc;
+}
+
+#befoglalo {
+    /*
+    width: 770px;
+    regi pc-n 800x600 monitoron egy 15-30px görgetősávot levéve, az oldalt csak függőlegesen kell görgetni nem vizszintesen
+    */
+    width: 960px;
+    /*amióta full hd monitorok vannak azóta ez 990pixelbe fér bele az oldalunk*/
+    margin: 20px auto;
+    /*felul-alul 20px jobbra-balra auto:     width: 960px; méretet középre helyezi a fentmaradó pixeleket amik ezen kivül van ketté osztja és így teszi középre*/
+    border: solid 10px #fff;
+    /*folyamatos 10 pixel vastag és átkell állítani a háttért hogy érrvényesüljön*/
+    background-color: #f1f1f1;
+
+}
+
+#fejlec {
+    clear: left;
+    text-align: center;
+    /*kozepre igazit*/
+    border: solid 10px #fff;
+    background-color: #c00;
+}
+
+#fejlec h1 {
+    margin: 0;
+    padding: 20px;
+}
+
+#menu {
+    width: 200px;
+    float: left;
+    /*innentől lebeg balra, ami azt jelenti, hogy maga mellé engedi a tartalmat, alapból minden blokszintu elem az faltól falig ér, a magassága pedig olyan magas mint a benne lévő tartalom, viszont a float: left-nél nem kell hogy ezek blok szintu elemek megvarjak egymast ebben az esetben amekkorra a belső tartalom amellé befolyhat az utána lévő blokszintu elem  */
+    text-transform: uppercase;
+}
+
+#menu ul {
+    padding: 0;
+}
+
+#menu li {
+    /*ne legyen lista pöty*/
+    list-style-type: none;
+    /*display: inline-block; //egysorba rakja */
+    display: block;
+    /*blokszintu elem lesz faltol falig fog érni*/
+    margin-bottom: 2px;
+    /*menuk kozotti  hezag*/
+}
+
+#menu a {
+    color: #000;
+    text-decoration: none;
+    /*nehuzza alá a hivatkozást*/
+    padding: 5px 15px;
+    display: block;
+    /*az érzékelésük megnő, a megadott helyen fog érzékelődni, teljes hosszban*/
+    background-color: #c00;
+}
+
+#menu a:hover {
+    color: #fff;
+    /*text-decoration: underline;
+    alahuzza*/
+    background-color: #000;
+}
+
+#menu a.activ {
+    color: #fff;
+    background-color: #000;
+}
+
+#tartalom {
+    margin: 20px 220px;
+    /*ezáltal nem fog a menu alá becsuszni*/
+    min-height: 400px;
+    /*ha nincs tartalom, akkkor is jelenjen meg , tehát nem csukódik össze*/
+    /*float: left;*/
+}
+
+#tartalom p {
+    text-align: justify;
+}
+
+#tartalom h2 {
+    margin-top: 0;
+    border-bottom: solid 1px #f00;
+    font-size: 18px;
+}
+
+#oldalsav {
+    float: right;
+    width: 200px;
+    margin-top: 20px;
+}
+
+#oldalsav h3 {
+    margin-top: 0;
+    border-bottom: solid 1px #f00;
+    font-size: 18px;
+}
+
+#lablec {
+    background-color: #090;
+    text-align: center;
+    padding: 10px;
+    border-top: solid 10px #fff;
+    color: #fff;
+    /*clear: left;
+    nem engedi egymásra simulni az fölötte lévő elemet, ha például lebegtetéssel volt megoldva akkor a bal oldaltra csuszna az az elem, és ez a clear left pedig ekkor uj sort kezd*/
+    clear: both;
+}

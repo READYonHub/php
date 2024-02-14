@@ -1,0 +1,46 @@
+div - block szintű jelölők
+span - sorközi jelölők
+
+<small></small>     -   tartalmilaag az apróbetüs tartalmat szokták ezzel jelölni
+
+html5 új strukturáju elemek
+
+div     -   általanos elem, blokszintu jelölő ami csak egy dobozként funcionál, de ha használjuk a header-t szemantikát biztosít, kereső program barát
+header  -   
+nav     -   
+
+
+tartalom gyártó, kamu szöveg    -   https://lipsum.com/
+
+<meta name="description" content="Az oldal pár mondatos leírása...">    -   SEO szempontból általában ez 255 karakteren belül kell hogy legyen és lerevánsnak kell lenni e atartalommal kapcsolatban
+minél jobban nagyaobb a relevancia tartalma, annál jobban szeretik a keresők
+
+<title>MYCMS - bemutatkozás</title>     -   a domain után a 2. legfontosabb kulcsszó, utána jön a h1, h2..., maximum 80 karakteren
+
+<meta name="keyword" content="kulcsszó1, kulcsszó2">    -   max 25 darab, legyen releváns
+
+<meta name="author" content="tel, email, nev">  -   saját elérhétőségek, név, email, tel, tulaj vagy készítő neve
+
+favicon -  24x24, 32x32 ez a cim mellett megjelenő kép
+
+<link type="image/x-icon" rel="shortcut icon" href="index/favicon.png"> -   néhány böngésző shortcut iconként fogja keresni
+
+<main></main>           -   a tartalom jelölésére szokták használni
+
+<article></article>     -   a legkisebb tartalom jelölésére szolgáló elem
+
+<aside></aside>         -   oldalsáv, kapcsolódó tartalom, nem a főtartalom, csak hozzá tartózó kiegészítő elemeket jelent
+
+<footer></footer>       -   lábléc
+
+float: left             -    /*innentől lebeg balra, ami azt jelenti, hogy maga mellé engedi a tartalmat, alapból minden blokszintu elem az faltól falig ér, a magassága pedig olyan magas mint a benne lévő tartalom, viszont a float: left-nél nem kell hogy ezek blok szintu elemek megvarjak egymast ebben az esetben amekkorra a belső tartalom amellé befolyhat az utána lévő blokszintu elem  */
+
+
+
+
+
+
+
+
+
+

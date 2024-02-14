@@ -1,0 +1,5 @@
+Készítsünk saját tartalomkezelő rendszer PHP-MySql környezetben. Jelszóval védett adminisztrációs felületen
+lehessen felvenni új menüpontokat, törölni, módosítani azokat egyszerűen WYSISYG szerkesztővel. Lehessen
+különböző dinamiskus modulakat is használni, pl.: kapcsolat, chat, fórum, képgaléria. A
+rendszer legyen keresőbarát. Legyen különválasztva a tartalom megjelenés és a viselkedés,
+ezáltal könnynen testreszabható rendszer legyen. Tudjon tartalmakat RSS-be vagy PDF-be alakítani. 
