@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>MYCMS - bemutatkozás</title>
+    <meta name="description" content="Az oldal pár mondatos leírása...">
+    <meta name="keyword" content="kulcsszó1, kulcsszó2">
+    <meta name="author" content="tel, email, nev">
+    <link rel="stylesheet" href="css/alap.css">
+    <link type="image/x-icon" rel="icon" href="index/favicon.png">
+    <link type="image/x-icon" rel="shortcut icon" href="index/favicon.png">
+
+</head>
+
+<body>
+    <div id="befoglalo">
+        <header id="fejlec">
+            <h1>Fejléc</h1>
+        </header>
+
+        <nav id="menu">
+            <ul>
+                <!--
+                <li><a href="#" class="activ">Bemutatkozás</a></li>
+                <li><a href="#">Kedvencek</a></li>
+                <li><a href="#">Képgaléria</a></li>
+                <li><a href="#">Kapcsolat</a></li>
+                -->
+                {{menu}}
+            </ul>
+        </nav>
+
+        <aside id="oldalsav">
+            <!-- <h3>Oldalsáv</h3>-->
+            {{oldalsav}}
+        </aside>
+
+        <main id="tartalom">
+            <!--<h2>Bemutatkozás</h2>-->
+            {{bemutatkozas}}
+            {{tartalom}}
+        </main>
+
+
+        <footer id="lablec">
+            <small>MyCMS tartalomkezelő rendszer</small>
+        </footer>
+    </div>
+</body>
+
+</html>
