@@ -35,6 +35,11 @@ favicon -  24x24, 32x32 ez a cim mellett megjelenő kép
 
 float: left             -    /*innentől lebeg balra, ami azt jelenti, hogy maga mellé engedi a tartalmat, alapból minden blokszintu elem az faltól falig ér, a magassága pedig olyan magas mint a benne lévő tartalom, viszont a float: left-nél nem kell hogy ezek blok szintu elemek megvarjak egymast ebben az esetben amekkorra a belső tartalom amellé befolyhat az utána lévő blokszintu elem  */
 
+file_get_contents("tartalom.html");  -   ez használ egy tartalmat, amit megadok neki
+
+str_replace("{mit}","{mire}", {miben}.);    -   kitudunk cserélni vele tartalmat
+
+require_once();     -   csak egyszer használja fel
 
 
 
