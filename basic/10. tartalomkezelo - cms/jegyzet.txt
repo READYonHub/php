@@ -41,6 +41,12 @@ str_replace("{mit}","{mire}", {miben}.);    -   kitudunk cserélni vele tartalma
 
 require_once();     -   csak egyszer használja fel
 
+ini_set();          - "hiba", 0 vagy 1, milyen hibat jelenitsen meg vagy neki
+
+error_reporting(E_ALL);     -   milyen hibakat akarok kiiratni
+E_ALL                       -   minden hibat mutasson
+
+
 
 
 

@@ -45,6 +45,10 @@ body {
     text-transform: uppercase;
 }
 
+#menu.active li {
+    background-color: #000;
+}
+
 #menu ul {
     padding: 0;
 }
